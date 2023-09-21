@@ -1,7 +1,7 @@
 FROM node:latest as build
 WORKDIR /usr/local/app
 COPY ./ /usr/local/app/
-RUN npm install -g pnpm
+RUN npm install pnpm
 RUN pnpm install
 RUN pnpm build
 
