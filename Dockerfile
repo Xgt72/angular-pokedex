@@ -1,7 +1,8 @@
-FROM node:latest as build
+FROM node:18.17.0 as build
 WORKDIR /usr/local/app
 COPY ./ /usr/local/app/
-RUN npm install pnpm
+RUN npm install -g npm@10.1.0
+RUN npm install -g pnpm
 RUN pnpm install
 RUN pnpm build
 
