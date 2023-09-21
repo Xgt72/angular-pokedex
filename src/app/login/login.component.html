@@ -1,0 +1,54 @@
+<div class="flex justify-center">
+  <div class="w-full sm:w-2/3 md:w-1/2 flex justify-center">
+    <div class="w-full p-4 shadow-md rounded-md border-2">
+      <div class="">
+        <h2 class="text-2xl">Page de connexion</h2>
+        <p class="my-2">
+          <em>{{ message }}</em>
+        </p>
+      </div>
+      <form #loginForm="ngForm">
+        <div class="flex flex-col items-start my-2">
+          <label for="name">Name</label>
+          <input
+            class="w-full outline-none border-b-2 focus:border-teal-600 p-2"
+            type="text"
+            id="name"
+            [(ngModel)]="name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="flex flex-col items-start my-2">
+          <label for="password">Password</label>
+          <input
+            class="w-full outline-none border-b-2 focus:border-teal-600 p-2"
+            type="password"
+            id="password"
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+        </div>
+      </form>
+      <div class="flex justify-center">
+        <button
+          type="button"
+          class="bg-teal-600 px-4 py-2 rounded-md text-white uppercase shadow-md hover:shadow-xl"
+          *ngIf="!auth.isLoggedIn"
+          (click)="login()"
+        >
+          Se connecter
+        </button>
+        <button
+          type="button"
+          class="bg-teal-600 px-4 py-2 rounded-md text-white uppercase shadow-md hover:shadow-xl"
+          (click)="logout()"
+          *ngIf="auth.isLoggedIn"
+        >
+          Se déconnecter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

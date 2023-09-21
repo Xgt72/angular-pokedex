@@ -1,0 +1,31 @@
+<app-search-pokemon></app-search-pokemon>
+<app-loader *ngIf="!pokemonList"></app-loader>
+<section
+  class="inline-grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-4 mx-auto"
+>
+  <figure
+    pkmnBorderCard="teal"
+    *ngFor="let pokemon of pokemonList"
+    class="inline-grid grid-cols-2 gap-4 items-center shadow-lg rounded-md cursor-pointer py-2"
+    (click)="goToPokemon(pokemon)"
+  >
+    <img [src]="pokemon.picture" [alt]="pokemon.name" />
+    <figcaption>
+      <h3 class="text-2xl sm:text-3xl">{{ pokemon.name }}</h3>
+      <p>{{ pokemon.created | date : "dd MMMM yyyy" }}</p>
+      <div class="flex gap-1 flex-wrap mt-2">
+        <span
+          *ngFor="let type of pokemon.types"
+          class="m-2 rounded-full px-4 py-1.5 {{ type | pokemonTypeColor }}"
+        >
+          {{ type }}
+        </span>
+      </div>
+    </figcaption>
+  </figure>
+</section>
+<a
+  class="fixed bottom-8 right-8 text-xl flex items-center justify-center w-10 h-10 bg-red-600 rounded-full shadow-md"
+  routerLink="/pokemon/add"
+  >➕</a
+>

@@ -1,0 +1,22 @@
+<div class="flex justify-center">
+  <div class="w-full sm:w-2/3 md:w-1/2 flex justify-center">
+    <div class="w-full p-4 shadow-md rounded-md border-2">
+      <input
+        class="w-full outline-none border-b-2 focus:border-teal-600 p-2"
+        #searchBox
+        type="text"
+        (keyup)="search(searchBox.value)"
+        placeholder="Rechercher un pokémon"
+      />
+      <div class="mt-4 border-t-2 w-full flex flex-col items-center">
+        <a
+          *ngFor="let pokemon of pokemons$ | async"
+          (click)="goToDetailPokemon(pokemon)"
+          class="text-teal-600 text-lg px-3 py-2 border-2 border-t-0 border-gray-200 w-full cursor-pointer"
+        >
+          {{ pokemon.name }}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

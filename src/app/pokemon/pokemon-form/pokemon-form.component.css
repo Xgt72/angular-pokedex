@@ -1,0 +1,53 @@
+.form-group {
+  @apply mb-4;
+}
+
+.form-group label {
+  @apply text-gray-500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="url"] {
+  @apply py-3 w-full border-b-2 font-medium outline-none;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="url"]:focus {
+  @apply py-3 w-full border-b-2 font-medium;
+}
+
+.form-group div.type {
+  @apply my-4;
+}
+
+.form-group div.type label {
+  @apply text-black flex items-center;
+}
+
+.form-group div.type input[type="checkbox"] {
+  @apply w-6 h-6 mr-4;
+  accent-color: rgb(13 148 136);
+  cursor: pointer;
+}
+
+.form-group div.type input[type="checkbox"]:disabled {
+  cursor: auto;
+}
+
+.card-panel {
+  @apply bg-red-400 p-4 rounded-md mt-2 shadow-md;
+}
+
+.ng-valid[required] {
+  border-left: 5px solid #42a948;
+}
+
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442;
+}
+
+div.divider {
+  @apply border-b-2 -mt-2 mb-2;
+}
